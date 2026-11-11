@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +23,7 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -69,9 +67,7 @@ header {
   letter-spacing: 1.5px;
 }
 
-.logo span {
-  color: var(--light-green);
-}
+.logo span { color: var(--light-green); }
 
 nav {
   display: flex;
@@ -84,9 +80,7 @@ nav a {
   color: #e0e9e3;
 }
 
-nav a:hover {
-  color: var(--light-green);
-}
+nav a:hover { color: var(--light-green); }
 
 .menu-button {
   display: none;
@@ -143,9 +137,7 @@ nav a:hover {
   letter-spacing: -2px;
 }
 
-.hero h1 span {
-  color: var(--light-green);
-}
+.hero h1 span { color: var(--light-green); }
 
 .hero p {
   max-width: 590px;
@@ -180,9 +172,7 @@ nav a:hover {
 
 /* GENERAL SECTIONS */
 
-section {
-  padding: 85px 0;
-}
+section { padding: 85px 0; }
 
 .section-label {
   color: #598b5b;
@@ -231,9 +221,7 @@ section {
 
 /* VENTURES */
 
-.ventures {
-  background: #eaf0e9;
-}
+.ventures { background: #eaf0e9; }
 
 .venture-grid {
   display: grid;
@@ -250,9 +238,7 @@ section {
   transition: transform .2s;
 }
 
-.venture-card:hover {
-  transform: translateY(-5px);
-}
+.venture-card:hover { transform: translateY(-5px); }
 
 .venture-number {
   color: #6b9e69;
@@ -278,9 +264,7 @@ section {
   font-size: 13px;
 }
 
-.venture-link:hover {
-  color: var(--green);
-}
+.venture-link:hover { color: var(--green); }
 
 /* AREAS OF FOCUS */
 
@@ -320,13 +304,9 @@ section {
   margin: auto;
 }
 
-.contact .section-label {
-  color: var(--light-green);
-}
+.contact .section-label { color: var(--light-green); }
 
-.contact .section-title {
-  color: white;
-}
+.contact .section-title { color: white; }
 
 .contact-email {
   display: inline-block;
@@ -356,9 +336,7 @@ footer {
 /* MOBILE RESPONSIVENESS */
 
 @media(max-width: 760px) {
-  .menu-button {
-    display: block;
-  }
+  .menu-button { display: block; }
 
   nav {
     display: none;
@@ -373,38 +351,24 @@ footer {
     gap: 18px;
   }
 
-  nav.open {
-    display: flex;
-  }
+  nav.open { display: flex; }
 
-  .hero {
-    padding: 85px 0;
-  }
+  .hero { padding: 85px 0; }
 
-  .hero::after {
-    right: -300px;
-  }
+  .hero::after { right: -300px; }
 
   .about-grid,
   .venture-grid {
     grid-template-columns: 1fr;
   }
 
-  .about-grid {
-    gap: 30px;
-  }
+  .about-grid { gap: 30px; }
 
-  .focus-grid {
-    grid-template-columns: 1fr;
-  }
+  .focus-grid { grid-template-columns: 1fr; }
 
-  section {
-    padding: 65px 0;
-  }
+  section { padding: 65px 0; }
 
-  .about-panel {
-    padding: 28px;
-  }
+  .about-panel { padding: 28px; }
 }
 </style>
 </head>
@@ -596,7 +560,7 @@ footer {
         </p>
 
         <a class="venture-link" href="#contact">
-          Coming Soon...→
+          Coming Soon... →
         </a>
 
       </article>
@@ -624,6 +588,32 @@ footer {
           target="_blank"
           rel="noopener noreferrer">
           Click here to visit LIFENERA DIGITAL →
+        </a>
+
+      </article>
+
+      <!-- LIFENERA PHOTOGRAPHY -->
+
+      <article class="venture-card">
+
+        <div class="venture-number">
+          04 / PHOTOGRAPHY & CREATIVE SERVICES
+        </div>
+
+        <h3>LIFENERA PHOTOGRAPHY</h3>
+
+        <p>
+          A creative photography venture capturing people,
+          moments and stories through professional portrait,
+          wedding, event and commercial photography.
+        </p>
+
+        <a
+          class="venture-link"
+          href="https://lifenera-photography.pages.dev/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Click here to visit LIFENERA PHOTOGRAPHY →
         </a>
 
       </article>
@@ -770,3 +760,4 @@ document.getElementById("year").textContent =
 
 </body>
 </html>
+```
