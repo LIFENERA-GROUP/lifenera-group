@@ -48,14 +48,16 @@
 <form class="formbox" id="caseForm" action="https://formsubmit.co/lifeneragroup@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="New LIFENERA Digital Safety assistance enquiry">
 <input type="hidden" name="_template" value="table">
+<input type="hidden" id="replyTo" name="_replyto" value="">
 <input type="hidden" name="_next" value="https://lifeneradigitalsafety.pages.dev/?submitted=1#report">
 <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:1px;width:1px"><h3>Initial assistance enquiry</h3><p>Fields marked required must be completed.</p>
 <div class="field"><label for="fullName">Your name *</label><input id="fullName" name="fullName" autocomplete="name" required maxlength="80" placeholder="Enter your name"></div>
-<div class="field"><label for="email">Your email address *</label><input id="email" name="_replyto" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com"></div>
+<div class="field"><label for="email">Your email address *</label><input id="email" name="contactEmail" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com"></div>
+<div class="field"><label for="phone">Phone / WhatsApp number (optional)</label><input id="phone" name="phoneNumber" type="tel" autocomplete="tel" maxlength="30" placeholder="Include your country code, e.g. +234..."></div>
 <div class="field"><label for="platform">Platform involved *</label><select id="platform" name="platform" required><option value="">Select a platform</option><option>WhatsApp</option><option>Facebook</option><option>Instagram</option><option>Telegram</option><option>Other</option></select></div>
 <div class="field"><label for="issue">What happened? *</label><select id="issue" name="issue" required><option value="">Select the closest option</option><option>Account hacked or taken over</option><option>Unable to log in</option><option>Two-step verification or PIN issue</option><option>Impersonation or fake account</option><option>Suspicious activity</option><option>General digital safety question</option></select></div>
 <div class="field"><label for="summary">Brief description (do not include secrets) *</label><textarea id="summary" name="summary" required maxlength="1200" placeholder="Describe what happened, when it started and what official steps you have already tried. Do not include passwords, PINs or verification codes."></textarea></div>
-<label class="consent"><input type="checkbox" id="consent" name="consent" value="I agree to the privacy notice" required><span>I agree that LIFENERA GROUP may use these details to respond to this enquiry. I understand that this form opens my email application and does not securely upload or store a case file.</span></label>
+<label class="consent"><input type="checkbox" id="consent" name="consent" value="I agree to the privacy notice" required><span>I agree that LIFENERA GROUP may use these details to respond to this enquiry. I understand that my details will be sent to LIFENERA GROUP so they can respond to my enquiry.</span></label>
 <button class="btn" type="submit">Send assistance request</button>
 <p class="fine">Your submission is processed by FormSubmit, a third-party form delivery service, and emailed to LIFENERA GROUP. Do not use this form for emergencies or submit confidential documents.</p>
 </form></div></section>
@@ -69,6 +71,7 @@
 <footer class="footer"><div class="wrap footrow"><span>© <span id="year"></span> LIFENERA GROUP. All rights reserved.</span><span><a href="privacy.html">Privacy notice</a> · <a href="mailto:lifeneragroup@gmail.com">Contact</a></span><span>Protecting accounts. Empowering users. Building digital trust.</span></div></footer>
 <script>
 const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));document.getElementById('year').textContent=new Date().getFullYear();
+document.getElementById('caseForm').addEventListener('submit',()=>{document.getElementById('replyTo').value=document.getElementById('email').value;});
 const params=new URLSearchParams(window.location.search);if(params.get('submitted')==='1'){const msg=document.createElement('p');msg.setAttribute('role','status');msg.style.cssText='background:#e9f5e7;color:#183c31;padding:14px;border-radius:8px;margin:0 0 16px;font-weight:700';msg.textContent='Thank you. Your enquiry has been submitted. LIFENERA GROUP will review it and respond by email.';document.querySelector('.formbox').prepend(msg);history.replaceState({},'',window.location.pathname+'#report');}
 </script>
 </body></html>
