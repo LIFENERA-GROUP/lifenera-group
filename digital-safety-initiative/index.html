@@ -45,12 +45,10 @@
 <div class="step"><div class="num">STEP 04</div><h3>Secure the account</h3><p>When access is restored, we share preventive guidance to help reduce the risk of another compromise.</p></div>
 </div><div class="notice"><b>Important:</b> LIFENERA is an independent initiative and is not currently an authorised WhatsApp or Meta support partner. We cannot access platform systems, override security checks, guarantee account restoration or make ownership decisions. Any future escalation arrangement will only operate if formally authorised by the platform.</div></div></section>
 <section class="report" id="report"><div class="wrap report-grid"><div><div class="section-head"><div class="kicker">Request assistance</div><h2>Tell us what happened.</h2><p>Use this form to send your enquiry directly to LIFENERA. Your submission will be delivered to our contact email; you do not need to open your own email application.</p></div><p style="color:#d1dfd5;font-size:13px">For your safety, never send passwords, six-digit verification codes, two-step verification PINs, recovery codes or copies of identity documents through this form.</p></div>
-<form class="formbox" id="caseForm" action="https://formsubmit.co/lifeneragroup@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="New LIFENERA Digital Safety assistance enquiry">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" id="replyTo" name="_replyto" value="">
-<input type="hidden" name="_next" value="https://lifeneradigitalsafety.pages.dev/?submitted=1#report">
-<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:1px;width:1px"><h3>Initial assistance enquiry</h3><p>Fields marked required must be completed.</p>
+<iframe name="submissionFrame" id="submissionFrame" title="Form submission" style="display:none"></iframe>
+<form class="formbox" id="caseForm" action="https://script.google.com/macros/s/AKfycbz-53DVH-PmC901aYFLS6J0x4ipSSRNvw8r4tHNilrgeae97Wkj5bQQm4LOz4lidaFg/exec" method="POST" target="submissionFrame">
+<input type="hidden" name="formStartedAt" id="formStartedAt" value="">
+<input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;height:1px;width:1px"><h3>Initial assistance enquiry</h3><p>Fields marked required must be completed.</p>
 <div class="field"><label for="fullName">Your name *</label><input id="fullName" name="fullName" autocomplete="name" required maxlength="80" placeholder="Enter your name"></div>
 <div class="field"><label for="email">Your email address *</label><input id="email" name="Email_Address" type="email" autocomplete="email" required maxlength="120" placeholder="you@example.com"></div>
 <div class="field"><label for="phone">Phone / WhatsApp number (optional)</label><input id="phone" name="Phone_Number" type="tel" autocomplete="tel" maxlength="30" placeholder="Include your country code, e.g. +234..."></div>
@@ -59,7 +57,7 @@
 <div class="field"><label for="summary">Brief description (do not include secrets) *</label><textarea id="summary" name="summary" required maxlength="1200" placeholder="Describe what happened, when it started and what official steps you have already tried. Do not include passwords, PINs or verification codes."></textarea></div>
 <label class="consent"><input type="checkbox" id="consent" name="consent" value="I agree to the privacy notice" required><span>I agree that LIFENERA GROUP may use these details to respond to this enquiry. I understand that my details will be sent to LIFENERA GROUP so they can respond to my enquiry.</span></label>
 <button class="btn" type="submit">Send assistance request</button>
-<p class="fine">Your submission is processed by FormSubmit, a third-party form delivery service, and emailed to LIFENERA GROUP. Do not use this form for emergencies or submit confidential documents.</p>
+<p class="fine">Your enquiry is sent to LIFENERA GROUP through its Google Apps Script form handler. Do not use this form for emergencies or submit confidential documents.</p>
 </form></div></section>
 <section id="safety"><div class="wrap"><div class="section-head"><div class="kicker">Our commitment</div><h2>Trust begins with responsible handling.</h2><p>We are committed to clear boundaries and careful treatment of the people who contact us.</p></div><div class="principles">
 <div class="principle"><h3>Consent and ownership</h3><p>We only guide or document a case at the request of the affected account owner or an appropriately authorised representative.</p></div>
@@ -71,7 +69,10 @@
 <footer class="footer"><div class="wrap footrow"><span>© <span id="year"></span> LIFENERA GROUP. All rights reserved.</span><span><a href="privacy.html">Privacy notice</a> · <a href="mailto:lifeneragroup@gmail.com">Contact</a></span><span>Protecting accounts. Empowering users. Building digital trust.</span></div></footer>
 <script>
 const menuBtn=document.getElementById('menuBtn');const navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));});navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));document.getElementById('year').textContent=new Date().getFullYear();
-document.getElementById('caseForm').addEventListener('submit',()=>{document.getElementById('replyTo').value=document.getElementById('email').value;});
-const params=new URLSearchParams(window.location.search);if(params.get('submitted')==='1'){const msg=document.createElement('p');msg.setAttribute('role','status');msg.style.cssText='background:#e9f5e7;color:#183c31;padding:14px;border-radius:8px;margin:0 0 16px;font-weight:700';msg.textContent='Thank you. Your enquiry has been submitted. LIFENERA GROUP will review it and respond by email.';document.querySelector('.formbox').prepend(msg);history.replaceState({},'',window.location.pathname+'#report');}
+const caseForm=document.getElementById('caseForm');
+const submitButton=caseForm.querySelector('button[type="submit"]');
+let submissionTimer;
+caseForm.addEventListener('submit',()=>{document.getElementById('formStartedAt').value=String(Date.now());submitButton.disabled=true;submitButton.textContent='Sending…';clearTimeout(submissionTimer);submissionTimer=setTimeout(()=>{submitButton.disabled=false;submitButton.textContent='Send assistance request';},15000);});
+window.addEventListener('message',(event)=>{if(event.source!==document.getElementById('submissionFrame').contentWindow||!event.data||event.data.type!=='lifenera-form-result')return;clearTimeout(submissionTimer);submitButton.disabled=false;submitButton.textContent='Send assistance request';const old=document.getElementById('formResult');if(old)old.remove();const msg=document.createElement('p');msg.id='formResult';msg.setAttribute('role','status');msg.style.cssText='padding:14px;border-radius:8px;margin:0 0 16px;font-weight:700';if(event.data.status==='success'){msg.style.background='#e9f5e7';msg.style.color='#183c31';msg.textContent='Thank you. Your enquiry has been sent to LIFENERA GROUP. We will review it and respond by email.';caseForm.reset();}else{msg.style.background='#fff0e8';msg.style.color='#8a3b18';msg.textContent='We could not send your enquiry. Please check your connection and try again, or email lifeneragroup@gmail.com.';}caseForm.prepend(msg);});
 </script>
 </body></html>
