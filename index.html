@@ -330,6 +330,43 @@ section { padding: 85px 0; }
 
 .venture-link:hover { color: var(--green); }
 
+/* OUR WORK, PARTNERSHIPS & COMPANY PROFILE */
+.work-section { background: #f5f7f4; }
+.work-grid, .partner-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; margin-top: 35px;
+}
+.work-card, .partner-card {
+  background: white; border: 1px solid #e1e9e1;
+  border-radius: 9px; padding: 28px;
+}
+.work-card h3, .partner-card h3 { margin: 10px 0; font-size: 19px; }
+.work-card p, .partner-card p { color: var(--muted); font-size: 14px; }
+.work-type {
+  color: #598b5b; font-size: 11px; font-weight: bold;
+  letter-spacing: 1.4px; text-transform: uppercase;
+}
+.partner-card { border-top: 3px solid var(--light-green); }
+.profile-section { background: #eaf0e9; }
+.profile-panel {
+  background: white; border: 1px solid #e1e9e1;
+  border-radius: 10px; padding: 34px; margin-top: 30px;
+}
+.profile-facts {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 18px 30px; margin-top: 24px;
+}
+.profile-fact strong { display: block; margin-bottom: 4px; }
+.profile-fact span { color: var(--muted); font-size: 14px; }
+.section-cta {
+  display: inline-block; margin-top: 22px; background: var(--green);
+  color: white; padding: 12px 20px; border-radius: 5px;
+  font-weight: bold; font-size: 13px;
+}
+@media(max-width:760px) {
+  .work-grid, .partner-grid, .profile-facts { grid-template-columns: 1fr; }
+}
+
 /* AREAS OF FOCUS */
 
 .focus-grid {
@@ -470,6 +507,9 @@ footer {
       <a href="#about" onclick="closeMenu()">About Us</a>
       <a href="#founder" onclick="closeMenu()">Founder</a>
       <a href="#ventures" onclick="closeMenu()">Our Ventures</a>
+      <a href="#work" onclick="closeMenu()">Our Work</a>
+      <a href="#partnerships" onclick="closeMenu()">Partnerships</a>
+      <a href="#company-profile" onclick="closeMenu()">Company Profile</a>
 
       <a
         href="https://lifenera-digital.pages.dev/"
@@ -774,6 +814,93 @@ footer {
 
     </div>
 
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section class="work-section" id="work">
+  <div class="container">
+    <div class="section-label">Selected Work</div>
+    <h2 class="section-title">Ideas taking shape.</h2>
+    <p class="section-intro">
+      Explore a selection of platforms, educational projects and initiatives
+      being developed across the LIFENERA GROUP network.
+    </p>
+    <div class="work-grid">
+      <article class="work-card">
+        <div class="work-type">Digital platform</div>
+        <h3>Opportunity Signal</h3>
+        <p>A searchable platform designed to help people discover scholarships, grants, jobs, fellowships and other opportunities.</p>
+        <a class="venture-link" href="https://opportunity-signal.pages.dev/" target="_blank" rel="noopener noreferrer">Explore the platform →</a>
+      </article>
+      <article class="work-card">
+        <div class="work-type">Education & publishing</div>
+        <h3>LIFENERA Biology & Books</h3>
+        <p>Learning resources, biology explainers and published books created to make knowledge easier to access and understand.</p>
+        <a class="venture-link" href="https://lifenerabooks.pages.dev/" target="_blank" rel="noopener noreferrer">Explore LIFENERA Books →</a>
+      </article>
+      <article class="work-card">
+        <div class="work-type">Community initiative</div>
+        <h3>Digital Safety Initiative</h3>
+        <p>A public-interest initiative focused on practical digital safety awareness and helping people navigate online risks.</p>
+        <a class="venture-link" href="https://lifeneradigitalsafety.pages.dev/" target="_blank" rel="noopener noreferrer">Explore the initiative →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERSHIPS -->
+<section id="partnerships">
+  <div class="container">
+    <div class="section-label">Work With Us</div>
+    <h2 class="section-title">Partnerships that move ideas forward.</h2>
+    <p class="section-intro">
+      We welcome conversations with organisations, businesses, institutions,
+      creators and individuals interested in building useful solutions together.
+    </p>
+    <div class="partner-grid">
+      <article class="partner-card">
+        <h3>Strategic Partnerships</h3>
+        <p>Collaborate with us on projects, platforms and initiatives that share a clear purpose and create mutual value.</p>
+      </article>
+      <article class="partner-card">
+        <h3>Institutional & Community Collaboration</h3>
+        <p>Work with our ventures on education, awareness, access to opportunities and community-focused programmes.</p>
+      </article>
+      <article class="partner-card">
+        <h3>Business & Project Collaboration</h3>
+        <p>Explore joint projects, digital solutions, creative services and opportunities to develop promising ideas.</p>
+      </article>
+    </div>
+    <a class="section-cta" href="mailto:lifeneragroup@gmail.com?subject=Partnership%20Enquiry%20-%20LIFENERA%20GROUP">Partner With Us</a>
+  </div>
+</section>
+
+<!-- COMPANY PROFILE -->
+<section class="profile-section" id="company-profile">
+  <div class="container">
+    <div class="section-label">Company Overview</div>
+    <h2 class="section-title">A group built to turn ideas into ventures.</h2>
+    <p class="section-intro">
+      LIFENERA GROUP is a growing venture-building company working across
+      technology, education, publishing, digital services, creative work and
+      community initiatives.
+    </p>
+    <div class="profile-panel">
+      <p>
+        Our approach is to identify needs and opportunities, develop practical
+        ideas and build projects that can grow into useful products, platforms
+        and services. Each venture operates in its own area while contributing
+        to the wider vision of LIFENERA GROUP.
+      </p>
+      <div class="profile-facts">
+        <div class="profile-fact"><strong>Company</strong><span>LIFENERA GROUP</span></div>
+        <div class="profile-fact"><strong>Tagline</strong><span>Building Ideas. Creating Possibilities.</span></div>
+        <div class="profile-fact"><strong>Core areas</strong><span>Technology, education, publishing, digital services and creative initiatives</span></div>
+        <div class="profile-fact"><strong>General enquiries</strong><span>lifeneragroup@gmail.com</span></div>
+      </div>
+      <a class="section-cta" href="mailto:lifeneragroup@gmail.com?subject=Request%20for%20LIFENERA%20GROUP%20Company%20Profile">Request Company Profile</a>
+    </div>
   </div>
 </section>
 
