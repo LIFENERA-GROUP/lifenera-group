@@ -249,6 +249,40 @@ section { padding: 85px 0; }
   font-size: 14px;
 }
 
+
+/* FOUNDER */
+.founder { background: #f5f7f4; }
+.founder-grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.78fr) 1.22fr;
+  gap: 55px;
+  align-items: center;
+  margin-top: 35px;
+}
+.founder-photo {
+  width: 100%;
+  max-width: 390px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  display: block;
+  filter: grayscale(100%);
+  box-shadow: 18px 18px 0 #e1ebdf;
+}
+.founder-copy h3 { font-size: 27px; margin: 0 0 4px; }
+.founder-role {
+  color: #598b5b;
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.founder-copy p { color: var(--muted); margin: 0 0 15px; }
+@media(max-width:760px) {
+  .founder-grid { grid-template-columns: 1fr; gap: 32px; }
+  .founder-photo { max-width: 320px; margin: auto; }
+}
+
 /* VENTURES */
 
 .ventures { background: #eaf0e9; }
@@ -434,6 +468,7 @@ footer {
     <nav id="navigation">
       <a href="#home" onclick="closeMenu()">Home</a>
       <a href="#about" onclick="closeMenu()">About Us</a>
+      <a href="#founder" onclick="closeMenu()">Founder</a>
       <a href="#ventures" onclick="closeMenu()">Our Ventures</a>
 
       <a
@@ -533,6 +568,31 @@ footer {
 
     </div>
 
+  </div>
+</section>
+
+
+<!-- FOUNDER SECTION -->
+<section class="founder" id="founder">
+  <div class="container">
+    <div class="section-label">Leadership</div>
+    <h2 class="section-title">Meet the Founder</h2>
+    <div class="founder-grid">
+      <img
+        class="founder-photo"
+        src="https://raw.githubusercontent.com/LIFENERA-GROUP/lifenera-group/main/founder-photo.jpg"
+        alt="Portrait of Agah David, Founder and CEO of LIFENERA GROUP"
+        loading="lazy">
+      <div class="founder-copy">
+        <h3>Agah David</h3>
+        <div class="founder-role">Founder and CEO, LIFENERA GROUP</div>
+        <p>Agah David is the Founder and Chief Executive Officer of LIFENERA GROUP, a growing company built around innovation, creativity, technology and the development of practical solutions.</p>
+        <p>With an academic background in Animal and Environmental Biology and a strong interest in entrepreneurship, digital innovation and education, he is passionate about turning ideas into meaningful ventures that create value and open new possibilities.</p>
+        <p>Through LIFENERA GROUP, he is building ventures across technology, education, publishing, digital services and social impact. His approach is centred on identifying opportunities, developing useful ideas and creating platforms and businesses that can make a positive difference.</p>
+        <p>He believes meaningful progress begins with an idea, but real impact comes from the courage to build it, the discipline to grow it and the determination to make it useful to others.</p>
+        <p><strong>His vision is to build LIFENERA GROUP into a company that develops innovative ventures, creates opportunities and contributes to a better-connected and more empowered society.</strong></p>
+      </div>
+    </div>
   </div>
 </section>
 
